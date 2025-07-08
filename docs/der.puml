@@ -1,0 +1,15 @@
+@startuml
+
+title API Usuarios - Domain Model
+
+entity user {
+  *user_id : UUID <<PK>>
+  --
+  username : String
+  password : String
+  email : String
+  created_at : date
+  role : String <<USER / ADMIN>>
+}
+
+@enduml
