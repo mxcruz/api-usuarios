@@ -1,0 +1,62 @@
+info:
+  application:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+  doc:
+    version: 1.0
+  rest:
+    connecttimeout: 3000
+    readTimeout: 300
+
+server:
+  port: 80
+
+spring:
+  application:
+    name: bff-figusapp
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  test:
+    database:
+      replace: none
+
+data:
+  initialization:
+    enabled: false
+
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY}
+
+logging:
+  level:
+    root: INFO
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
