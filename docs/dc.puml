@@ -1,0 +1,36 @@
+@startuml
+
+package "Browser" {
+  [Customer Web] #LightGray
+}
+
+package "Mobile" {
+  [Customer Android] #LightGray
+  [Customer IOS] #LightGray
+}
+
+package "Backend" {
+  [API Usuarios] #LightBlue
+}
+
+package "Database" {
+  [usuarios DB] #LightBlue
+}
+
+package "Browser" {
+  [Customer Web] --> [API Usuarios]
+}
+
+package "Mobile" {
+  [Customer Android] --> [API Usuarios]
+  [Customer IOS] --> [API Usuarios]
+}
+
+package "Backend" {
+}
+
+package "Database" {
+  [API Usuarios] --> [usuarios DB]
+}
+
+@enduml
