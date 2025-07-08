@@ -35,9 +35,10 @@ Sigue estos pasos para preparar el entorno de desarrollo:
    > **Importante:** Los tests de integración utilizan [Karate](https://karatelabs.io/) y una base de datos en memoria H2, por lo que no requieren una base de datos externa.  
    > Para ejecutar las pruebas de integración y generar los reportes, utiliza el siguiente comando:
    ```sh
-   ./bin/verify.sh
+   ./mvnw clean verify
    ```
-   Los reportes de cobertura y resultados de tests de integración pueden visualizarse ejecutando:
+   Al finalizar la ejecución, se generarán reportes de cobertura y resultados de los tests de integración en el directorio `target`.
+   Los cuales podrás consultar a traves de tu navegador web ejecutando el siguiente comando:
    ```sh
    open target/index.html
    ```
